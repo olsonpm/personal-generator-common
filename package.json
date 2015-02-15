@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/olsonpm/personal-generator-defaults/issues"
   },
-  "homepage": "https://github.com/olsonpm/personal-generator-defaults"
+  "homepage": "https://github.com/olsonpm/personal-generator-defaults",
+  "dependencies": {
+    "fs-bluebird": "^0.1.2"
+  }
 }
