@@ -3,8 +3,8 @@
 var bFs = require('fs-bluebird')
     , path = require('path');
 
-var PROJECT_NAME_REGEX = new RegExp("^[\w.-]+$")
-    , PROJECT_NAME_REGEX_S = "/^[\w.-]+$/";
+var PROJECT_NAME_REGEX = /^[\w.-]+$/
+    , PROJECT_NAME_REGEX_S = "^[\w.-]+$";
 
 function ProjectNameState(projectName_, ctx_) {
     this.projectName = projectName_;
@@ -24,9 +24,9 @@ ProjectNameState.prototype.getPrompt = function getProjectNamePrompt() {
         , 'message': 'Project name'
         , 'type': 'input'
         , 'validate': function(v) {
-                // must match valid directory regex
-                //   and also the directory must not already exist
-                return !!v.match(PROJECT_NAME_REGEX) && !bFs.existsSync(path.join(self.ctx.destinationRoot(), v));
+                return !v.match(PROJECT_NAME_REGEX)
+                    ? "Project name must match the regex: " + PROJECT_NAME_REGEX_S
+                    : true;
             }
         , 'when': function() {
             return !self.projectName;
