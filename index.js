@@ -3,7 +3,7 @@
 var bFs = require('fs-bluebird')
     , path = require('path');
 
-var PROJECT_NAME_REGEX = /^[\w.-]+$/
+var PROJECT_NAME_REGEX = new RegExp("^[\w.-]+$")
     , PROJECT_NAME_REGEX_S = "/^[\w.-]+$/";
 
 function ProjectNameState(projectName_, ctx_) {
