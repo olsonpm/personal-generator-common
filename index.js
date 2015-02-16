@@ -16,9 +16,10 @@ var bFs = require('fs-bluebird')
 var PROJECT_NAME_REGEX = /^[\w.-]+$/
     , PROJECT_NAME_REGEX_S = "^[\w.-]+$";
 
-var lazy = nh.lazyExtensions
-    , Utils = nh.Utils;
 
+//------//
+// Main //
+//------//
 
 function ProjectNameState(projectName_, ctx_) {
     this.projectName = projectName_;

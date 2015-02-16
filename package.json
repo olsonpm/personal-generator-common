@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/olsonpm/personal-generator-common",
   "dependencies": {
-    "fs-bluebird": "^0.1.2",
-    "node-helpers": "git://github.com/olsonpm/node-helpers.git"
+    "fs-bluebird": "^0.1.2"
   }
 }
