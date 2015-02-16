@@ -1,10 +1,24 @@
 'use strict';
 
+
+//---------//
+// Imports //
+//---------//
+
 var bFs = require('fs-bluebird')
     , path = require('path');
 
+
+//------//
+// Init //
+//------//
+
 var PROJECT_NAME_REGEX = /^[\w.-]+$/
     , PROJECT_NAME_REGEX_S = "^[\w.-]+$";
+
+var lazy = nh.lazyExtensions
+    , Utils = nh.Utils;
+
 
 function ProjectNameState(projectName_, ctx_) {
     this.projectName = projectName_;
@@ -21,10 +35,10 @@ ProjectNameState.prototype.getPrompt = function getProjectNamePrompt() {
     var self = this;
     return {
         'name': 'projectName'
-        , 'message': 'Project name'
+        , 'message': "Project name or empty for current directory"
         , 'type': 'input'
         , 'validate': function(v) {
-                return !v.match(PROJECT_NAME_REGEX)
+                return !v.match(PROJECT_NAME_REGEX) && v !== ''
                     ? "Project name must match the regex: " + PROJECT_NAME_REGEX_S
                     : true;
             }

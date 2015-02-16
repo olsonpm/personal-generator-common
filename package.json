@@ -1,5 +1,5 @@
 {
-  "name": "personal-generator-defaults",
+  "name": "personal-generator-common",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,15 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/olsonpm/personal-generator-defaults.git"
+    "url": "https://github.com/olsonpm/personal-generator-common.git"
   },
   "author": "Phil Olson <philip.olson@protonmail.ch> (https://github.com/olsonpm)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/olsonpm/personal-generator-defaults/issues"
+    "url": "https://github.com/olsonpm/personal-generator-common/issues"
   },
-  "homepage": "https://github.com/olsonpm/personal-generator-defaults",
+  "homepage": "https://github.com/olsonpm/personal-generator-common",
   "dependencies": {
-    "fs-bluebird": "^0.1.2"
+    "fs-bluebird": "^0.1.2",
+    "node-helpers": "git://github.com/olsonpm/node-helpers.git"
   }
 }
