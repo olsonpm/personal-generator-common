@@ -21,8 +21,8 @@ var PROJECT_NAME_REGEX = /^[\w.-]+$/
 // Main //
 //------//
 
-function ProjectNameState(projectName_, ctx_) {
-    this.projectName = projectName_;
+function ProjectNameState(ctx_) {
+    this.projectName = ctx_.projectName;
     this.ctx = ctx_;
     if (projectName_) {
         ctx_.destinationRoot(path.join(ctx_.destinationRoot(), projectName_));
