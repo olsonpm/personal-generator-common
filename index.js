@@ -24,11 +24,11 @@ var PROJECT_NAME_REGEX = /^[\w.-]+$/
 function ProjectNameState(ctx_) {
     this.projectName = ctx_.projectName;
     this.ctx = ctx_;
-    if (projectName_) {
-        ctx_.destinationRoot(path.join(ctx_.destinationRoot(), projectName_));
+    if (this.projectName) {
+        ctx_.destinationRoot(path.join(ctx_.destinationRoot(), this.projectName));
     }
-    if (projectName_ && !projectName_.match(PROJECT_NAME_REGEX)) {
-        throw new Error("project name '" + projectName_ + "' did not match the validation regex: " + PROJECT_NAME_REGEX_S + "\nPlease enter a valid project name.");
+    if (this.projectName && !this.projectName.match(PROJECT_NAME_REGEX)) {
+        throw new Error("project name '" + this.projectName + "' did not match the validation regex: " + PROJECT_NAME_REGEX_S + "\nPlease enter a valid project name.");
     }
 }
 
