@@ -44,7 +44,7 @@ ProjectNameState.prototype.getPrompt = function getProjectNamePrompt() {
                     : true;
             }
         , 'when': function() {
-            return !self.projectName;
+            return (typeof self.projectName === 'undefined');
         }
     };
 };
