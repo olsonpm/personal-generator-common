@@ -22,13 +22,13 @@ var PROJECT_NAME_REGEX = /^[\w.-]+$/
 //------//
 
 function ProjectNameState(ctx_) {
-    this.projectName = ctx_.projectName;
+    this.projectNameArg = ctx_.projectNameArg;
     this.ctx = ctx_;
-    if (this.projectName && path.basename(ctx_.destinationRoot()) !== this.projectName) {
-        ctx_.destinationRoot(path.join(ctx_.destinationRoot(), this.projectName));
+    if (this.projectNameArg && path.basename(ctx_.destinationRoot()) !== this.projectNameArg) {
+        ctx_.destinationRoot(path.join(ctx_.destinationRoot(), this.projectNameArg));
     }
-    if (this.projectName && !this.projectName.match(PROJECT_NAME_REGEX)) {
-        throw new Error("project name '" + this.projectName + "' did not match the validation regex: " + PROJECT_NAME_REGEX_S + "\nPlease enter a valid project name.");
+    if (this.projectNameArg && !this.projectNameArg.match(PROJECT_NAME_REGEX)) {
+        throw new Error("project name '" + this.projectNameArg + "' did not match the validation regex: " + PROJECT_NAME_REGEX_S + "\nPlease enter a valid project name.");
     }
 }
 
@@ -44,7 +44,7 @@ ProjectNameState.prototype.getPrompt = function getProjectNamePrompt() {
                     : true;
             }
         , 'when': function() {
-            return (typeof self.projectName === 'undefined');
+            return (typeof self.projectNameArg === 'undefined');
         }
     };
 };
